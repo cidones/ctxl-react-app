@@ -1,0 +1,46 @@
+
+.container-wrapper{
+  margin: auto;
+  margin-top: 1%; 
+
+}
+
+
+
+
+
+.banner{
+  background-color: #38b6ff;
+}
+
+.main-text-wrapper{
+    padding: 2%; 
+  }
+
+p{
+    text-align: justify;
+    padding: 5px; 
+  }
+  
+.features-text-div{
+  
+    padding: 2%;
+    background-color: rgba(222, 250, 252, 1); 
+    border-radius: 20px;
+
+  }
+
+.h4-home{
+    margin: center;
+  }
+
+  .page-logo{
+    height: 20vmin;
+    border: 1px whitesmoke;
+    border-radius: 50%;
+    padding: 1%;     
+    margin-left: 45%;
+}
+
+
+ 

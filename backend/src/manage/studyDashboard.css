@@ -1,0 +1,21 @@
+.dashboard-wrapper{
+    display: flex;
+}
+
+
+.text-div-content{
+    text-align: justify;
+    width: 80%;
+    padding: 2%;
+}
+
+
+.legend-box-status{
+   margin-left: 1%;
+   padding: 1%;
+}
+
+h4{
+  padding: 1%;
+  text-align: center;
+}

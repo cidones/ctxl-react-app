@@ -1,0 +1,21 @@
+.demo-div{
+    display: flex;
+    padding: 2%;
+}
+
+.buttonSave{
+    margin-right: 5%;
+}
+
+.baseline-wrapper{
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 1%;
+    background-color: rgba(222, 250, 252, 1);
+    padding: 1%;
+    border-radius: 20px;
+}
+
+.breadcrumb-div{
+    background-color: rgba(222, 250, 252, 1);
+}

@@ -1,0 +1,19 @@
+.managePageStyle{
+    max-width: 1000px;
+    margin: auto;
+}
+
+.manage-text-div{
+    margin-top: 1%;
+    text-align: justify;
+    padding: 4%;
+    background-color: rgba(222, 250, 252, 1);
+    border-radius: 20px;
+}
+
+.table-div{
+    margin-top: 1%;
+    background-color: rgba(249, 248, 244, 1);
+    border-radius: 20px;
+    padding: 3%;
+}
