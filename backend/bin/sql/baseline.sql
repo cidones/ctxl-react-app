@@ -1,5 +1,5 @@
 CREATE TABLE baseline(
-    id      INTEGER PRIMARY KEY,
+    id             INTEGER PRIMARY KEY,
     baseline_date  TIMESTAMP NOT NULL,
     first_name     VARCHAR(64),
     last_name      VARCHAR(64),

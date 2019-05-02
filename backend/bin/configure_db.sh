@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
+export PGPASSWORD= 'ctxl'
 
 echo "Configuring ctxl database"
 

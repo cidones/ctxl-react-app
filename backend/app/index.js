@@ -1,10 +1,18 @@
 const express = require('express');
+const cors = require('cors');
 const baselineRouter = require('./api/baseline');
+const accountRouter = require('./api/account');
+const thermalRouter = require('./api/thermal');
 const bodyParser = require('body-parser');
 
 const app = express()
 
-app.use('/baseline', baselineRouter);
+app.use(cors({ origin: 'http://localhost:1234 '}));
+
+app.use('/add', baselineRouter);
+app.use('/account', accountRouter);
+app.use('/thermal', thermalRouter);
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended:true,
@@ -13,6 +21,8 @@ app.use(bodyParser.urlencoded({
 
 app.get('/', (request, response) => {
     response.json({ info: 'Node.js, Express, and Postgres API' })
-  })
+})
+
+
 
 module.exports = app;
