@@ -1,5 +1,5 @@
 const express = require('express');
-const baselineRouter = require('../api/baseline');
+const baselineRouter = require('./api/baseline');
 const bodyParser = require('body-parser');
 
 const app = express()

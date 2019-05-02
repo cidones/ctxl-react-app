@@ -1,2 +1,4 @@
 node_modules/
 secrets/
+bin/configure_db.sh
+
