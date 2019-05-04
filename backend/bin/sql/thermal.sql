@@ -1,5 +1,6 @@
 CREATE TABLE thermal(
-    visit_date            TIMESTAMP NOT NULL,
+    study_id              INTEGER PRIMARY KEY,
+    visit_date            VARCHAR(64),
     drug_combination      INTEGER,
     thermal_combination_1 INTEGER,
     thermal_combination_2 INTEGER,
@@ -21,6 +22,7 @@ CREATE TABLE thermal(
     disorientation        VARCHAR(64),
     other_adverse         VARCHAR(64),
     other_adverse_senso   VARCHAR(64),
-    study_id              INTEGER,
-    FOREIGN KEY (study_id) REFERENCES baseline(id)
+    person_id             INTEGER,
+    FOREIGN KEY (person_id) REFERENCES baseline(id)
+
 );

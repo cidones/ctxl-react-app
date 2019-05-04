@@ -10,6 +10,7 @@ router.post('/addbaseline', (req, res, next) => {
         gender, race, p_height, p_weight, hair_color, dominant_hand, smoker, pregnant, drug_user
      } = req.body;
 
+     
     BaselineTable.storeBaseline({ 
         id, baseline_date, first_name, last_name, date_of_birth,
         gender, race, p_height, p_weight, hair_color, dominant_hand, smoker, pregnant, drug_user

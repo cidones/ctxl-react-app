@@ -1,9 +1,9 @@
 CREATE TABLE baseline(
-    id             SERIAL PRIMARY KEY,
-    baseline_date  TIMESTAMP NOT NULL,
+    id             INTEGER PRIMARY KEY,
+    baseline_date  VARCHAR(64),
     first_name     VARCHAR(64),
     last_name      VARCHAR(64),
-    date_of_birth  TIMESTAMP NOT NULL,
+    date_of_birth  VARCHAR(64),
     gender         VARCHAR(64),
     race           VARCHAR(64),
     p_height       VARCHAR(64),

@@ -11,6 +11,8 @@ router.post('/signup', (req, res, next) => {
     const usernameHash = hash(username);
     const passwordHash = hash(password);
 
+    
+
     AccountTable.storeAccount({ usernameHash, passwordHash })
     .then(() => res.json({ message: 'success!' }))
     .catch(error => next(error));

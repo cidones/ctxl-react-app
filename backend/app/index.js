@@ -16,8 +16,7 @@ app.use(bodyParser.json());
 // }))
 
 app.use('/account', accountRouter);
-//app.use('/baseline', baselineRouter);
-app.post('/baseline', db.createBaseline);
+app.use('/baseline', baselineRouter);
 app.use('/thermal', thermalRouter);
 
 app.use((err, req, res, next) => {
