@@ -4,7 +4,7 @@ const baselineRouter = require('./api/baseline');
 const accountRouter = require('./api/account');
 const thermalRouter = require('./api/thermal');
 const bodyParser = require('body-parser');
-const db = require('../queries');
+
 
 const app = express();
 
