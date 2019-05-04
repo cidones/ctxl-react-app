@@ -1,5 +1,4 @@
 CREATE TABLE thermal(
-    id                    INTEGER PRIMARY KEY,
     visit_date            TIMESTAMP NOT NULL,
     drug_combination      INTEGER,
     thermal_combination_1 INTEGER,
