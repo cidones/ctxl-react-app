@@ -4,12 +4,14 @@ const baselineRouter = require('./api/baseline');
 const accountRouter = require('./api/account');
 const thermalRouter = require('./api/thermal');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 
 
 const app = express();
 
 app.use(cors({ origin: 'http://localhost:1234 '}));
 
+app.use(cookieParser());
 app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({
 //   extended:true,
