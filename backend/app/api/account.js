@@ -62,8 +62,14 @@ router.get('/logout', (req, res, next) => {
     }).then(() => {
         res.clearCookie('sessionString');
 
-        res.json({ message: 'Successful logout' });
+        res.json({ message: 'Successful logout ' });
     }).catch(error => next(error));
 });
+
+router.get('/authenticated', (req, res, next) => {
+    authenticatedAccount({ sessionString: req.cookies.sessionString })
+      .then(({ authenticated }) => res.json({ authenticated }))
+      .catch(error => next(error));
+  });
 
 module.exports = router;
