@@ -8,9 +8,15 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import { Router, Switch, Route, Redirect } from 'react-router-dom';
 import { fetchAuthenticated } from './actions/account';
-import HomePage from './home/HomePage';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers';
+import CreatePage from './create/CreatePage';
+import AddEdit from './manage/AddEditPage';
+import BaseLineVisit from './create/baseline/BaseLine';
+import ThermalData from './create/thermal/ThermalData';
+import ManagePage from './manage/ManagePage';
+import Home from './component/Home';
+import NotFoundComponent from './component/NotfoundComponent';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
@@ -34,8 +40,14 @@ store.dispatch(fetchAuthenticated())
             <Provider store={store}>
                 <Router history={history}>
                     <Switch>
-                    <Route exact path='/' component={Root} />
-                    <AuthRoute path='/home' component={HomePage}/>
+                      <Route exact path='/' component={Root}/>
+                      <AuthRoute  path='/home' component={Home}/>
+                      <AuthRoute  path='/create' component={CreatePage}/>
+                      <AuthRoute  path='/add' component={AddEdit}/>
+                      <AuthRoute  path='/baseline' component={BaseLineVisit} />
+                      <AuthRoute  path ='/thermal' component={ThermalData}/>
+                      <AuthRoute  path='/manage' component={ManagePage} /> 
+                      <Route  component={NotFoundComponent} />
                     </Switch>
                 </Router>
             </Provider>

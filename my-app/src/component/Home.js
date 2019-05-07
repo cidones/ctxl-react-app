@@ -1,12 +1,19 @@
 import React, {Component} from 'react';
-import Navegation from '../router/Navegation';
+import HeaderComponent from './HeaderComponent';
+import HomePage from '../home/HomePage';
+import { logout } from '../actions/account';
+import { connect } from 'react-redux';
+
 
 class Home extends Component {
     render(){
         return(
-            <Navegation />
+            <div>
+                <HeaderComponent />
+                <HomePage/>
+            </div>
         )
     }
 }
 
-export default Home;
+export default connect(null, { logout })(Home);

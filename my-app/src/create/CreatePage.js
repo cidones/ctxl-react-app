@@ -5,6 +5,9 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import history from '../router/history';
+import HeaderComponent from '../component/HeaderComponent';
+import { logout } from '../actions/account';
+import { connect } from 'react-redux';
 
 class CreatePage extends Component{
     render(){
@@ -12,8 +15,8 @@ class CreatePage extends Component{
         const initialContent ="You may begin the creation of a new CTxL project on your own by completing the form below and clicking the Create Project button at the bottom."
 
         return(
-                
                <div className="create-master-div">
+                    <HeaderComponent/>
                    <div className="div-form-create">
                        <div >
                             {initialContent}
@@ -40,7 +43,7 @@ class CreatePage extends Component{
                                     </Form.Control>
                                 </Col>
                             </Form.Group>
-                            <Button variant="primary" type="submit" size="lg" className="button-sub" onClick={ () => history.push('/create/add')}>
+                            <Button variant="primary" type="submit" size="lg" className="button-sub" onClick={ () => history.push('/add')}>
                                 Submit
                             </Button>
                        </Form>
@@ -49,4 +52,4 @@ class CreatePage extends Component{
         )
     }
 }
-export default CreatePage;
+export default connect(null, { logout })(CreatePage);

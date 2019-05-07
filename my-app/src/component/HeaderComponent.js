@@ -1,16 +1,8 @@
 import React from 'react';
 import Nav from 'react-bootstrap/Nav';
 import history from '../router/history';
-import { Route, Switch } from 'react-router-dom';
-import HomePage from '../home/HomePage';
-import CreatePage from '../create/CreatePage';
-import ManagePage from '../manage/ManagePage';
-import NotFoundComponent from '../component/NotfoundComponent';
-import Navegation from '../router/Navegation';
-import AddEdit from '../manage/AddEditPage';
-import Baseline from '../create/baseline/BaseLine';
-import ThermalData from '../create/thermal/ThermalData';
-
+import { logout } from '../actions/account';
+import { connect } from 'react-redux';
 
 class  HeaderComponent extends React.Component {
     
@@ -30,21 +22,13 @@ class  HeaderComponent extends React.Component {
                     <Nav.Item>
                         <Nav.Link onClick={ () => history.push('/help')} >Help</Nav.Link>
                     </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link onClick={this.props.logout} className='logout-button' >Log out </Nav.Link>
+                    </Nav.Item>
                 </Nav>
-                    <Switch>
-                            <Route exact path='/home' component={HomePage} />
-                            <Route component={Navegation}>
-                            <Route exact path='/create' component={CreatePage}/>
-                            <Route path='/create/add' component={AddEdit}/>
-                            <Route path='/baseline' component={Baseline} />
-                            <Route path ='/thermal' component={ThermalData}/>
-                            <Route exact path='/manage' component={ManagePage} />                
-                            </Route>  
-                        <Route  component={NotFoundComponent} />
-                    </Switch>   
              </div> 
             
         )
     }
 }
-export default HeaderComponent;
+export default connect(null, { logout })(HeaderComponent);
