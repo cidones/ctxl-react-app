@@ -52,4 +52,9 @@ class CreatePage extends Component{
         )
     }
 }
-export default connect(null, { logout })(CreatePage);
+export default connect(
+    state => ({
+        message: state.account.message
+    }), 
+    { logout }
+)(CreatePage);

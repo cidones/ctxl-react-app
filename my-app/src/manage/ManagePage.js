@@ -10,9 +10,31 @@ import HeaderComponent from '../component/HeaderComponent';
 
 library.add(faEdit, faCheckSquare, faStopCircle)
 
+const statusMap = {
+    complete: 'check-square',
+    development: 'edit',
+    inactive: 'stop-circle'
+}
 
 class ManagePage extends Component{
+    state = {
+        icon: null
+    }
+
+    constructor() {
+        super();
+
+        const result = { status: 'complete'};
+
+        this.state = {
+            icon: statusMap[result.status]
+        }
+    }
+
+    changeIcon = ({ target }) => this.setState({ icon: statusMap[target.value]})
+ 
     render(){
+        const { icon } = this.state;
 
         const manageContent = <div>
                                     Listed below are the CTxL projects to which you currently have access. Click the project title to open the project.
@@ -23,6 +45,7 @@ class ManagePage extends Component{
     return(
         <div className="managePageStyle">
             <HeaderComponent/>
+            <input onChange={this.changeIcon}/>
             <div className="manage-text-div">    
                 {manageContent}
             </div>
@@ -43,7 +66,7 @@ class ManagePage extends Component{
                             <td>1</td>
                             <td>35</td>
                             <td>Pain measurement</td>
-                            <td><FontAwesomeIcon icon="edit"/></td>
+                            <td><FontAwesomeIcon icon={icon}/></td>
                         </tr>
                     </tbody>
                 </Table>
