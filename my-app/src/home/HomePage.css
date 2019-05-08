@@ -5,16 +5,14 @@
 
 }
 
-
-
-
-
 .banner{
   background-color: #38b6ff;
 }
 
 .main-text-wrapper{
     padding: 2%; 
+    background-color: rgba(222, 250, 252, 1); 
+    border-radius: 20px;
   }
 
 p{

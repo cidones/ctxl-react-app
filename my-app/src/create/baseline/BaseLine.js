@@ -33,7 +33,7 @@ class BaseLineVisit extends Component{
                     <hr/>
                     <div>Event Name: Baseline Visit</div>
                     <hr/>
-                    <div><h5>Participant ID: ID HERE </h5></div>
+                    <div><h5>Participant ID: 1 </h5></div>
                     <hr/>
                     <Form>
                         <Form.Group as={Row} controlId="formHorizontalDate">

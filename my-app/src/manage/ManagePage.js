@@ -39,11 +39,11 @@ class ManagePage extends Component{
                     </thead>
                     <tbody>
                         <tr>
+                            <td>Marinol vs Morphine</td>
                             <td>1</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
-                            <td>Table cell</td>
+                            <td>35</td>
+                            <td>Pain measurement</td>
+                            <td><FontAwesomeIcon icon="edit"/></td>
                         </tr>
                     </tbody>
                 </Table>
