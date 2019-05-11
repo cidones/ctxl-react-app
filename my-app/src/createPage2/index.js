@@ -1,5 +1,9 @@
 import React from 'react';
 
+import HeaderComponent from '../component/HeaderComponent';
+import CreatePage from '../create/CreatePage';
+
+
 
 class CreateFrom extends React.Component {
     state = {
@@ -25,7 +29,8 @@ class CreateFrom extends React.Component {
 
         return <div>
             {currentStep === 1 && 
-                <div>step 1 
+                <div>
+                    <CreatePage />
                     <div>
                         <label htmlFor="name">Name</label>
                         <input name="name" onChange={this.changeTextData('name')}></input>

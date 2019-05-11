@@ -66,7 +66,7 @@ class ManagePage extends Component{
                             <td>1</td>
                             <td>35</td>
                             <td>Pain measurement</td>
-                            <td><FontAwesomeIcon icon={icon}/></td>
+                            <td> <FontAwesomeIcon icon={icon}/></td>
                         </tr>
                     </tbody>
                 </Table>

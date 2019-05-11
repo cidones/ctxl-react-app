@@ -43,8 +43,8 @@ store.dispatch(fetchAuthenticated())
                     <Switch>
                       <Route exact path='/' component={Root}/>
                       <AuthRoute  path='/home' component={Home}/>
-                      <AuthRoute  path='/create2' component={CreatePage}/>
-                      <AuthRoute  path='/create' component={CreatePage2}/>
+                      <AuthRoute  path='/create' component={CreatePage}/>
+                
                       <AuthRoute  path='/add' component={AddEdit}/>
                       <AuthRoute  path='/baseline' component={BaseLineVisit} />
                       <AuthRoute  path ='/thermal' component={ThermalData}/>
