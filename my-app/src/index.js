@@ -11,6 +11,7 @@ import { fetchAuthenticated } from './actions/account';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers';
 import CreatePage from './create/CreatePage';
+import CreatePage2 from './createPage2/';
 import AddEdit from './manage/AddEditPage';
 import BaseLineVisit from './create/baseline/BaseLine';
 import ThermalData from './create/thermal/ThermalData';
@@ -43,6 +44,7 @@ store.dispatch(fetchAuthenticated())
                       <Route exact path='/' component={Root}/>
                       <AuthRoute  path='/home' component={Home}/>
                       <AuthRoute  path='/create' component={CreatePage}/>
+                
                       <AuthRoute  path='/add' component={AddEdit}/>
                       <AuthRoute  path='/baseline' component={BaseLineVisit} />
                       <AuthRoute  path ='/thermal' component={ThermalData}/>
