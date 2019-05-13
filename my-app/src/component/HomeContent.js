@@ -8,6 +8,7 @@ import logo from '../assets/logo.png';
 const homeContent = `CTxL is a secure, web-based application for building and managing online surveys and databases.
                    Using CTxL's stream-lined process for rapidly developing projects, you may create and design projects using 1) the online method from your web browser using the Online Designer; and/or 2) the offline method by constructing a 'data dictionary' template file in Microsoft Excel, which can be later uploaded into CTxL. 
                    Both surveys and databases (or a mixture of the two) can be built using these methods. CTxL provides automated export procedures for seamless data downloads to Excel and common statistical packages (SPSS, SAS, Stata, R), as well as a built-in project calendar, a scheduling module, ad hoc reporting tools, and advanced features, such as branching logic, file uploading, and calculated fields.`
+                   
 class HomeContent extends Component {
 
     render(){
