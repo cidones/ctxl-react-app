@@ -18,5 +18,12 @@ router.post('/addbaseline', (req, res, next) => {
     .catch(error => next(error));
 });
 
+router.post('/create', (req, res, next)=> {
+    const { title } = req.body;
+
+    BaselineTable.storeTitle({ title })
+    .then(() => res.json({ message: 'title inserted'}))
+    .catch( error => next(error))
+})
 
 module.exports = router;

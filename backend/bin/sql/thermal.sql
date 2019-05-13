@@ -1,5 +1,5 @@
 CREATE TABLE thermal(
-    study_id              INTEGER PRIMARY KEY,
+    study_id              SERIAL PRIMARY KEY,
     visit_date            VARCHAR(64),
     drug_combination      INTEGER,
     thermal_combination_1 INTEGER,

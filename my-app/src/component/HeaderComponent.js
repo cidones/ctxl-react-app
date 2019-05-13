@@ -1,8 +1,7 @@
 import React from 'react';
 import Nav from 'react-bootstrap/Nav';
 import history from '../router/history';
-import { logout } from '../actions/account';
-import { connect } from 'react-redux';
+
 
 class  HeaderComponent extends React.Component {
     
@@ -14,7 +13,7 @@ class  HeaderComponent extends React.Component {
                         <Nav.Link onClick={ () => history.push('/home')} >Home</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link  onClick={ () => history.push('/create')} >Create new project</Nav.Link>
+                        <Nav.Link  onClick={ () => history.push('/baseline/create')} >Create new project</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
                         <Nav.Link onClick={ () => history.push('/manage')} >Manage my projects</Nav.Link>
@@ -31,4 +30,4 @@ class  HeaderComponent extends React.Component {
         )
     }
 }
-export default connect(null, { logout })(HeaderComponent);
+export default HeaderComponent;

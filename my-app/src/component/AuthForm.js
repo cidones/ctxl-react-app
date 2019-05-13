@@ -5,6 +5,7 @@ import { signup, login } from '../actions/account';
 import fetchStates from '../reducers/fetchStates';
 import logo from '../assets/logo.png';
 import '../styles/AuthForm.css';
+import Footer from '../component/Footer';
 
 
 class AuthForm extends Component {
@@ -72,8 +73,10 @@ class AuthForm extends Component {
           <Button onClick={this.signup}>Signup</Button>
         </div>
         <br />
-        {this.Error}
+        <div className="error-div">{this.Error}</div>
+        <Footer/>
       </div>
+      
     );
   }
 }

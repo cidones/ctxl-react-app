@@ -13,13 +13,13 @@ app.use(cors({ origin: 'http://localhost:3000 ', credentials: true }));
 
 app.use(cookieParser());
 app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({
-//   extended:true,
-// }))
+app.use(bodyParser.urlencoded({extended:true}))
 
 app.use('/account', accountRouter);
 app.use('/baseline', baselineRouter);
 app.use('/thermal', thermalRouter);
+
+
 
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;

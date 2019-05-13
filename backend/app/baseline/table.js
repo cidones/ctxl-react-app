@@ -20,5 +20,18 @@ class BaselineTable {
             )
         }); 
     }
+
+    static storeTitle({title}){
+        return new Promise((resolve, reject) =>{
+            pool.query('INSERT into baseline(title) VALUES($1)',
+            [title],
+            (error, response)=>{
+                if (error) return reject(error);
+
+                resolve();
+            }
+            )
+        });
+    }
 }
 module.exports = BaselineTable;

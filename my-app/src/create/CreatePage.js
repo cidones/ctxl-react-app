@@ -6,10 +6,56 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import history from '../router/history';
 import HeaderComponent from '../component/HeaderComponent';
-import { logout } from '../actions/account';
-import { connect } from 'react-redux';
 
 class CreatePage extends Component{
+    state = {title: "", buttonClicked: false}
+
+    changeTextData = field => event =>
+    this.setState({data: {...this.state.data, [field]: event.target.value}})
+
+    updateTitle = event => {
+        this.setState({title: event.target.value})
+
+    }
+
+    goTo = (event) => {
+        event.preventDefault();
+        console.log(this.state)
+        fetch('http://localhost:1234/baseline/create', {
+            method: 'POST',
+            body: JSON.stringify({
+            title: this.state.title}),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then((response) => response.json())
+        .catch((error) => {
+            if(error) return console.log('error', error)
+        })
+        
+        console.log(this.state.title);
+        history.push('/baseline/add');
+        
+
+    }
+
+    handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(this.state)
+        fetch('http://localhost:1234/baseline/create', {
+            method: 'POST',
+            body: JSON.stringify({
+                id: 3,
+                title: this.state.title
+            }),
+            headers: {'Content-Type': 'application/json'}
+        })
+        .then(response => {return response.json()})
+        .catch(error => {console.log('error', error)
+        })
+        console.log('message', this.fetch());
+    }
     render(){
 
         const initialContent ="You may begin the creation of a new CTxL project on your own by completing the form below and clicking the Create Project button at the bottom."
@@ -21,13 +67,17 @@ class CreatePage extends Component{
                        <div >
                             {initialContent}
                        </div>
-                       <Form className="form-project-info">
+                       <Form className="form-project-info" onSubmit={this.handleSubmit} >
                             <Form.Group as={Row} controlId="formGroupTitle">
                                 <Form.Label column sm="4">
                                     Project Title:
                                 </Form.Label>
                                 <Col sm="6">
-                                    <Form.Control type="text" placeholder="Title" />
+                                    <Form.Control 
+                                    type="text" 
+                                    value= {this.state.title}
+                                    placeholder="Title" 
+                                    onChange={this.updateTitle}/>
                                 </Col>
                             </Form.Group>
                             <Form.Group as={Row} controlId="formGroupPurpose">
@@ -43,7 +93,7 @@ class CreatePage extends Component{
                                     </Form.Control>
                                 </Col>
                             </Form.Group>
-                            <Button variant="primary" type="submit" size="lg" className="button-sub" onClick={ () => history.push('/add')}>
+                            <Button variant="primary" type="submit" size="lg" className="button-sub" onClick={this.goTo}>
                                 Submit
                             </Button>
                        </Form>
@@ -52,4 +102,4 @@ class CreatePage extends Component{
         )
     }
 }
-export default connect(null, { logout })(CreatePage);
+export default CreatePage;

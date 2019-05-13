@@ -12,5 +12,6 @@
 .button-div{
 
     max-width: 200px;
-    margin: auto;
+    margin: 0 auto 150px auto;
+
 }

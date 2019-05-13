@@ -3,6 +3,7 @@ import HeaderComponent from './HeaderComponent';
 import HomePage from '../home/HomePage';
 import { logout } from '../actions/account';
 import { connect } from 'react-redux';
+import Footer from './Footer';
 
 
 class Home extends Component {
@@ -11,6 +12,7 @@ class Home extends Component {
             <div>
                 <HeaderComponent />
                 <HomePage/>
+                <Footer />
             </div>
         )
     }

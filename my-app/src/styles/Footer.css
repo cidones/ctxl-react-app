@@ -1,0 +1,15 @@
+.footer{
+    height: 100px;
+    background-color: #38b6ff;
+}
+
+.text-footer{
+    padding: 20px;
+    margin: auto;
+    max-width: 18%;
+}
+
+.para-text{
+    color: azure;
+    display: inline;
+}
