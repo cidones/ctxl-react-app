@@ -9,6 +9,7 @@ createdb -U ctxl_user ctxl
 
 psql -U ctxl_user ctxl < ./bin/sql/account.sql
 psql -U ctxl_user ctxl < ./bin/sql/baseline.sql
+psql -U ctxl_user ctxl < ./bin/sql/title.sql
 psql -U ctxl_user ctxl < ./bin/sql/thermal.sql
 
 echo "ctxl database was configured"

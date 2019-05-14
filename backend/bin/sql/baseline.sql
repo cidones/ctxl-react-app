@@ -1,5 +1,5 @@
 CREATE TABLE baseline(
-    id             SERIAL PRIMARY KEY,
+    participant_id SERIAL PRIMARY KEY,
     baseline_date  VARCHAR(64),
     first_name     VARCHAR(64),
     last_name      VARCHAR(64),
@@ -13,5 +13,5 @@ CREATE TABLE baseline(
     smoker         VARCHAR(64),
     pregnant       VARCHAR(64),
     drug_user      VARCHAR(64),
-    title          VARCHAR(64)
+    user_id        INTEGER REFERENCES account (id)
 );

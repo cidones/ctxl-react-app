@@ -1,5 +1,5 @@
 CREATE TABLE thermal(
-    study_id              SERIAL PRIMARY KEY,
+    thermal_id            SERIAL PRIMARY KEY,
     visit_date            VARCHAR(64),
     drug_combination      INTEGER,
     thermal_combination_1 INTEGER,
@@ -22,7 +22,5 @@ CREATE TABLE thermal(
     disorientation        VARCHAR(64),
     other_adverse         VARCHAR(64),
     other_adverse_senso   VARCHAR(64),
-    person_id             INTEGER,
-    FOREIGN KEY (person_id) REFERENCES baseline(id)
-
+    participant_id        INTEGER REFERENCES baseline (participant_id)
 );

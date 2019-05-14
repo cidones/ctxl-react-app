@@ -11,13 +11,14 @@ import { fetchAuthenticated } from './actions/account';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers';
 import CreatePage from './create/CreatePage';
-import CreatePage2 from './createPage2/';
 import AddEdit from './manage/AddEditPage';
 import BaseLineVisit from './create/baseline/BaseLine';
 import ThermalData from './create/thermal/ThermalData';
 import ManagePage from './manage/ManagePage';
 import Home from './component/Home';
 import NotFoundComponent from './component/NotfoundComponent';
+
+
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
@@ -35,31 +36,27 @@ const store = createStore(
   return <Route path={path} component={component} />;
 }
 
+
+
 store.dispatch(fetchAuthenticated())
   .then(() => {
     ReactDOM.render( 
-            <Provider store={store}>
-                <Router history={history}>
-                    <Switch>
-                      <Route exact path='/' component={Root}/>
-                      <AuthRoute  path='/home' component={Home}/>
-<<<<<<< HEAD
-                      <AuthRoute  path='/baseline/create' component={CreatePage}/>
-                      <AuthRoute  path='/baseline/add' component={AddEdit}/>
-                      <AuthRoute  path='/baseline/addbaseline' component={BaseLineVisit} />
-=======
-                      <AuthRoute  path='/create' component={CreatePage}/>
-                
-                      <AuthRoute  path='/add' component={AddEdit}/>
-                      <AuthRoute  path='/baseline' component={BaseLineVisit} />
->>>>>>> 4d7c6f5ff0aa210ee79155e4361044bdd642f81a
-                      <AuthRoute  path ='/thermal' component={ThermalData}/>
-                      <AuthRoute  path='/manage' component={ManagePage} /> 
-                      <Route  component={NotFoundComponent} />
-                    </Switch>
-                </Router>
-            </Provider>
-            , document.getElementById('root'));
+      <Provider store={store}>
+          <Router history={history}>
+              <Switch>
+                <Route exact path='/' component={Root}/>
+                <AuthRoute  path='/home' component={Home}/>
+                <AuthRoute  path='/baseline/create' component={CreatePage}/>
+                <AuthRoute  path='/baseline/add' component={AddEdit}/>
+                <AuthRoute  path='/baseline/addbaseline' component={BaseLineVisit} />
+                <AuthRoute  path ='/thermal' component={ThermalData}/>
+                <AuthRoute  path='/manage' component={ManagePage} /> 
+                <Route  component={NotFoundComponent} />
+              </Switch>
+          </Router>
+      </Provider>
+      , document.getElementById('root')
+      );
     })
 
 // If you want your app to work offline and load faster, you can change

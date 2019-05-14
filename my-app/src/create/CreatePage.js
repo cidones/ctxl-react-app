@@ -6,24 +6,15 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import history from '../router/history';
 import HeaderComponent from '../component/HeaderComponent';
-<<<<<<< HEAD
 
 class CreatePage extends Component{
     state = {title: "", buttonClicked: false}
-=======
-
-
-
-class CreatePage extends Component{
-    state = {title: '', buttonClicked: false}
->>>>>>> 4d7c6f5ff0aa210ee79155e4361044bdd642f81a
 
     changeTextData = field => event =>
     this.setState({data: {...this.state.data, [field]: event.target.value}})
 
     updateTitle = event => {
         this.setState({title: event.target.value})
-<<<<<<< HEAD
 
     }
 
@@ -65,18 +56,6 @@ class CreatePage extends Component{
         })
         console.log('message', this.fetch());
     }
-=======
-        
-    }
-
-    goTo = () => {
-        this.setState({buttonClicked: true});
-        history.push('/add');
-        console.log('Title: ', this.state.title);
-
-    }
-    
->>>>>>> 4d7c6f5ff0aa210ee79155e4361044bdd642f81a
     render(){
         
 
@@ -95,11 +74,7 @@ class CreatePage extends Component{
                        <div >
                             <Content text={content.text}/>
                        </div>
-<<<<<<< HEAD
-                       <Form className="form-project-info" onSubmit={this.handleSubmit} >
-=======
                        <Form className="form-project-info" >
->>>>>>> 4d7c6f5ff0aa210ee79155e4361044bdd642f81a
                             <Form.Group as={Row} controlId="formGroupTitle">
                                 <Form.Label column sm="4">
                                     Project Title:
@@ -107,13 +82,8 @@ class CreatePage extends Component{
                                 <Col sm="6">
                                     <Form.Control 
                                     type="text" 
-<<<<<<< HEAD
                                     value= {this.state.title}
                                     placeholder="Title" 
-=======
-                                    value={this.state.title}
-                                    placeholder="Title"
->>>>>>> 4d7c6f5ff0aa210ee79155e4361044bdd642f81a
                                     onChange={this.updateTitle}/>
                                 </Col>
                             </Form.Group>
@@ -130,11 +100,11 @@ class CreatePage extends Component{
                                     </Form.Control>
                                 </Col>
                             </Form.Group>
-<<<<<<< HEAD
-                            <Button variant="primary" type="submit" size="lg" className="button-sub" onClick={this.goTo}>
-=======
-                            <Button variant="primary" type="button" size="lg" className="button-sub" onClick={this.goTo}>
->>>>>>> 4d7c6f5ff0aa210ee79155e4361044bdd642f81a
+                            <Button variant="primary"
+                             type="button" 
+                             size="lg" 
+                             className="button-sub" 
+                             onClick={this.goTo}>
                                 Submit
                             </Button>
                        </Form>

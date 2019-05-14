@@ -12,6 +12,12 @@
 .button-div{
 
     max-width: 200px;
-    margin: 0 auto 150px auto;
+    margin: 0 auto 120px auto;
 
+}
+
+.error-div{
+    max-width: 30%;
+    margin: auto;
+    padding: 20px;
 }

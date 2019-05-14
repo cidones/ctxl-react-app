@@ -1,6 +1,8 @@
 import React from 'react';
 import Nav from 'react-bootstrap/Nav';
 import history from '../router/history';
+import { logout } from '../actions/account';
+import { connect } from 'react-redux';
 
 
 class  HeaderComponent extends React.Component {
@@ -24,10 +26,10 @@ class  HeaderComponent extends React.Component {
                     <Nav.Item>
                         <Nav.Link onClick={this.props.logout} className='logout-button' >Log out </Nav.Link>
                     </Nav.Item>
-                </Nav>
+                </Nav> 
              </div> 
             
         )
     }
 }
-export default HeaderComponent;
+export default connect(null, { logout })(HeaderComponent);
