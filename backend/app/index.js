@@ -16,12 +16,13 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}))
 
+//express methods
 app.use('/account', accountRouter);
 app.use('/baseline', baselineRouter);
 app.use('/create', titleRouter);
 app.use('/thermal', thermalRouter);
 
-
+//error handling
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
 
@@ -32,3 +33,6 @@ app.use((err, req, res, next) => {
 
 
 module.exports = app;
+
+//body-parser express middleware that reads forms input's and store it
+//as JS object accessable via req.body

@@ -12,10 +12,10 @@ router.post('/create-project', (req, res, next)=> {
 });
 
 router.get('/project-title', (req, res, next) => {
-    const { title } = req.body;
+    const { user_id, title } = req.body;
 
-    TitleTable.getTitle({title})
-    .then(() => res.json({ message: ' title returned '}))
+    TitleTable.getTitle({user_id, title})
+    .then(() => res.json({ message: 'title returned'}))
     .catch( error => next (error))
 });
 

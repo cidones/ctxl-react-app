@@ -23,6 +23,8 @@ class BaseLineVisit extends Component{
 
             <div className="baseline-wrapper">
                 <Breadcrumb className="breadcrumb-div">
+                    <Breadcrumb.Item 
+                    onClick={() => history.push('/home')}>Home</Breadcrumb.Item>
                     <Breadcrumb.Item href="#">Baseline visit </Breadcrumb.Item>
                     <Breadcrumb.Item href="#">Thermal data</Breadcrumb.Item>
                 </Breadcrumb>
@@ -167,7 +169,11 @@ class BaseLineVisit extends Component{
                         <Form.Group as={Row} controlId="formHorizontaButton">
                             <Form.Label column sm={4}></Form.Label>
                             <Col sm={4}>
-                                <Button  className="buttonSave" variant="light" onClick={() => history.push('/thermal')}>Save</Button>
+                                <Button  className="buttonSave"
+                                 variant="light" 
+                                 onClick={() => history.push('/thermal/thermal-add')}>
+                                 Save
+                                 </Button>
                                 <Button variant="light">Cancel</Button>
                             </Col>
                         </Form.Group>

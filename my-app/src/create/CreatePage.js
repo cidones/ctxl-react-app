@@ -8,7 +8,7 @@ import history from '../router/history';
 import HeaderComponent from '../component/HeaderComponent';
 
 class CreatePage extends Component{
-    state = {title: "", buttonClicked: false}
+    state = {title: ""}
 
     changeTextData = field => event =>
     this.setState({data: {...this.state.data, [field]: event.target.value}})
@@ -20,8 +20,8 @@ class CreatePage extends Component{
 
     goTo = (event) => {
         event.preventDefault();
-        console.log(this.state)
-        fetch('http://localhost:1234/baseline/create', {
+        
+        fetch('http://localhost:1234/create/create-project', {
             method: 'POST',
             body: JSON.stringify({
             title: this.state.title}),
@@ -34,28 +34,12 @@ class CreatePage extends Component{
             if(error) return console.log('error', error)
         })
         
-        console.log(this.state.title);
-        history.push('/baseline/add');
+        console.log(this.state);
+        history.push('/baseline/baseline-add');
         
 
     }
 
-    handleSubmit = (event) => {
-        event.preventDefault();
-        console.log(this.state)
-        fetch('http://localhost:1234/baseline/create', {
-            method: 'POST',
-            body: JSON.stringify({
-                id: 3,
-                title: this.state.title
-            }),
-            headers: {'Content-Type': 'application/json'}
-        })
-        .then(response => {return response.json()})
-        .catch(error => {console.log('error', error)
-        })
-        console.log('message', this.fetch());
-    }
     render(){
         
 

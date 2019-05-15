@@ -18,8 +18,6 @@ class AddEdit extends Component{
 
     state = { ButtonCliked : false } 
 
-    
-
     spinnerChange = event => {
         this.setState({ButtonCliked : true})
         
@@ -30,7 +28,6 @@ class AddEdit extends Component{
     }
 
     
-
     render(){
 
         const content = `You may view an existing record/response by selecting it from the drop-down lists below.

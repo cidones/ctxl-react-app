@@ -15,16 +15,16 @@ class TitleTable {
             )
         });
     }
-    static getTitle({ title })
-    {
+    static getTitle({ user_id })
+    { // Prepared statments PostgreSQL concept
         return new Promise((resolve, reject) =>{
             pool.query(
-                'SELECT user_id, title FROM title WHERE user_id = $1',
-                [title],
+                'SELECT * FROM title WHERE user_id = $1',
+                [user_id],
                 (error, response) => {
                     if ( error ) return reject(error)
 
-                    resolve({title: response.rows[0]});
+                    resolve(response.rows[0]);
                 }
                 
             )

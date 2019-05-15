@@ -15,7 +15,7 @@ class  HeaderComponent extends React.Component {
                         <Nav.Link onClick={ () => history.push('/home')} >Home</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link  onClick={ () => history.push('/baseline/create')} >Create new project</Nav.Link>
+                        <Nav.Link  onClick={ () => history.push('/create')} >Create new project</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
                         <Nav.Link onClick={ () => history.push('/manage')} >Manage my projects</Nav.Link>
