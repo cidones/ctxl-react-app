@@ -1,15 +1,14 @@
 #!/bin/bash
 
-export PGPASSWORD= 'ctxl'
 
 echo "Configuring ctxl database"
 
-dropdb -U ctxl_user ctxl
-createdb -U ctxl_user ctxl
+dropdb -U ctxl_user ctxldb
+createdb -U ctxl_user ctxldb
 
-psql -U ctxl_user ctxl < ./bin/sql/account.sql
-psql -U ctxl_user ctxl < ./bin/sql/baseline.sql
-psql -U ctxl_user ctxl < ./bin/sql/title.sql
-psql -U ctxl_user ctxl < ./bin/sql/thermal.sql
+psql -U ctxl_user ctxldb < ./bin/sql/account.sql
+psql -U ctxl_user ctxldb < ./bin/sql/baseline.sql
+psql -U ctxl_user ctxldb < ./bin/sql/title.sql
+psql -U ctxl_user ctxldb < ./bin/sql/thermal.sql
 
 echo "ctxl database was configured"
