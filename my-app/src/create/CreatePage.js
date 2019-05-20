@@ -20,7 +20,7 @@ class CreatePage extends Component{
 
     goTo = (event) => {
         event.preventDefault();
-        
+        alert('Project Created! ')
         fetch('http://localhost:1234/create/create-project', {
             method: 'POST',
             body: JSON.stringify({
@@ -58,7 +58,7 @@ class CreatePage extends Component{
                        <div >
                             <Content text={content.text}/>
                        </div>
-                       <Form className="form-project-info" >
+                       <Form className="form-project-info">
                             <Form.Group as={Row} controlId="formGroupTitle">
                                 <Form.Label column sm="4">
                                     Project Title:

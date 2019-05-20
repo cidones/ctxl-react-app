@@ -15,6 +15,18 @@ import Breadcrumb from 'react-bootstrap/Breadcrumb'
 
 library.add(faCalendarAlt)
 
+
+
+function ListNames(props){
+    const names = props.names;
+    const listNames = names.map(() =>
+    <ListNames key={names.id} value={names.text}/>
+    );
+    return(
+        <ul>{listNames}</ul>
+    )
+}
+
 class BaseLineVisit extends Component{
 
     state ={ data: 
@@ -34,7 +46,7 @@ class BaseLineVisit extends Component{
         this.setState({data: event.target.value})
     }
 
-    submitHandler = event => {
+    submitHandler = (event) => {
         fetch('http://localhost:1234/baseline/baseline-add', {
             method: 'POST',
             body: JSON.stringify({
@@ -48,17 +60,13 @@ class BaseLineVisit extends Component{
         .catch((error) => {
             if(error) return console.log('error', error)
         })
-
-
+        console.log(this.state);
+        history.push('/thermal/thermal-add')
+        event.preventDefault();
+        
     }
-    clearState() {
-        this.setState({
-          data: null
-        });
-      }
-    onCancel() {
-        this.data.clearState();
-    }
+    
+   
 
 
     render(){
@@ -79,11 +87,16 @@ class BaseLineVisit extends Component{
             <hr/>
             <div>Event Name: Baseline Visit</div>
             <hr/>
-                <Form onSubmit={this.submitHandler(this.state.data)}>
+                <Form>
                     <Form.Group as={Row} controlId="formHorizontalId">
                         <Form.Label column sm={4}>Participant ID: <FontAwesomeIcon icon="calendar-alt"/></Form.Label>
                         <Col sm={2}>
-                        <Form.Control type="text" placeholder="" />
+                        <Form.Control 
+                            as="input" 
+                            type="text" 
+                            placeholder="ID"
+                            onChange={this.inputChangeHandler.user_id}
+                            />
                         </Col>
                     </Form.Group>
                     <Form.Group as={Row} controlId="formHorizontalDate">
@@ -95,7 +108,7 @@ class BaseLineVisit extends Component{
                     <Form.Group as={Row} controlId="formHorizontalName">
                         <Form.Label column sm={4}>Name</Form.Label>
                         <Col sm={4}>
-                        <Form.Control type="text" placeholder="First Name" />
+                        <Form.Control  type="text" placeholder="First Name" />
                         </Col>
                         <Col sm={4}>
                         <Form.Control type="text" placeholder="Last Name" />
@@ -107,7 +120,7 @@ class BaseLineVisit extends Component{
                     <Form.Group as={Row} controlId="formHorizontalDate">
                         <Form.Label column sm={4}>Date of Birth <FontAwesomeIcon icon="calendar-alt"/></Form.Label>
                         <Col sm={2}>
-                        <Form.Control type="text" placeholder="" />
+                        <Form.Control as="input" type="text" placeholder="" />
                         </Col>
                     </Form.Group>
                     <Form.Group as={Row} controlId="formHorizontaGender">
@@ -213,15 +226,15 @@ class BaseLineVisit extends Component{
                     <Form.Group as={Row} controlId="formHorizontaButton">
                         <Form.Label column sm={4}></Form.Label>
                         <Col sm={4}>
-                            <Button  
-                                type="submit"
+                            <Button 
+                                onClick={this.submitHandler} 
+                                type="button"
                                 className="buttonSave"
                                 variant="light" 
-                                onClick={() => history.push('/thermal/thermal-add')}>
+                            >
                                 Save
                             </Button>
                             <Button
-                                onChange={this.onCancel()}
                                 onClick={() => history.push('/home')}
                                 variant="light">
                                 Cancel
