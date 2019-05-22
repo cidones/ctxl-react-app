@@ -29,22 +29,74 @@ function ListNames(props){
 
 class BaseLineVisit extends Component{
 
-    state ={ data: 
-        {
-            user_id: "", baseline_date: "", 
+    state ={ 
+            user_id: 0, baseline_date: "", 
              first_name: "", last_name: "", 
              date_of_birth: "", gender: "", 
              race: "", p_height: "", 
              p_weight: "", hair_color: "", 
              dominant_hand: "", smoker: "", 
-             pregnant: "", drug_user: "" 
-        }
-    }
+             pregnant: "", drug_user: ""   
+            }
     
-    inputChangeHandler = event => {
-        this.data = {...this.state.data};
-        this.setState({data: event.target.value})
+    inputChangeHandlerUser = (event) => {
+        event.preventDefault();
+        this.setState({user_id: event.target.value})
     }
+    inputChangeHandlerDate = (event) => {
+        event.preventDefault();
+        this.setState({baseline_date: event.target.value})
+    }
+    inputChangeHandlerFname = (event) => {
+        event.preventDefault();
+        this.setState({first_name: event.target.value})
+    }
+    inputChangeHandlerLname = (event) => {
+        event.preventDefault();
+        this.setState({last_name: event.target.value})
+    }
+    inputChangeHandlerDob = (event) => {
+        event.preventDefault();
+        this.setState({date_of_birth: event.target.value})
+    }
+    inputChangeHandlerGender = (event) => {
+        event.preventDefault();
+        this.setState({gender: event.target.value})
+    }
+    inputChangeHandlerRace = (event) => {
+        event.preventDefault();
+        this.setState({race: event.target.value})
+    }
+    inputChangeHandlerPHeight = (event) => {
+        event.preventDefault();
+        this.setState({p_height: event.target.value})
+    }
+    inputChangeHandlerPWeight = (event) => {
+        event.preventDefault();
+        this.setState({p_weight: event.target.value})
+    }
+    inputChangeHandlerHairColor = (event) => {
+        event.preventDefault();
+        this.setState({hair_color: event.target.value})
+    }
+    inputChangeHandlerHand = (event) => {
+        event.preventDefault();
+        this.setState({dominant_hand: event.target.value})
+    }
+    inputChangeHandlerSmoker = (event) => {
+        event.preventDefault();
+        this.setState({smoker: event.target.value})
+    }
+    inputChangeHandlerPregnant = (event) => {
+        event.preventDefault();
+        this.setState({pregnant: event.target.value})
+    }
+    inputChangeHandlerDrug = (event) => {
+        event.preventDefault();
+        this.setState({drug_user: event.target.value})
+    }
+
+    
 
     submitHandler = (event) => {
         fetch('http://localhost:1234/baseline/baseline-add', {
@@ -89,29 +141,41 @@ class BaseLineVisit extends Component{
             <hr/>
                 <Form>
                     <Form.Group as={Row} controlId="formHorizontalId">
-                        <Form.Label column sm={4}>Participant ID: <FontAwesomeIcon icon="calendar-alt"/></Form.Label>
+                        <Form.Label column sm={4}>Participant ID: </Form.Label>
                         <Col sm={2}>
-                        <Form.Control 
-                            as="input" 
+                        <Form.Control  
                             type="text" 
-                            placeholder="ID"
-                            onChange={this.inputChangeHandler.user_id}
+                            placeholder="participant_id"
+                            value={this.state.user_id}
+                            onChange={this.inputChangeHandlerUser}
                             />
                         </Col>
                     </Form.Group>
                     <Form.Group as={Row} controlId="formHorizontalDate">
                         <Form.Label column sm={4}>Baseline visit date <FontAwesomeIcon icon="calendar-alt"/></Form.Label>
-                        <Col sm={2}>
-                        <Form.Control type="text" placeholder="" />
+                        <Col sm={4}>
+                        <Form.Control 
+                            type="date" 
+                            placeholder="Visit Date"
+                            value={this.state.baseline_date}
+                            onChange={this.inputChangeHandlerDate} />
                         </Col>
                     </Form.Group>
                     <Form.Group as={Row} controlId="formHorizontalName">
                         <Form.Label column sm={4}>Name</Form.Label>
                         <Col sm={4}>
-                        <Form.Control  type="text" placeholder="First Name" />
+                        <Form.Control  
+                            type="text" 
+                            placeholder="First Name"
+                            value={this.state.first_name}
+                            onChange={this.inputChangeHandlerFname} />
                         </Col>
                         <Col sm={4}>
-                        <Form.Control type="text" placeholder="Last Name" />
+                        <Form.Control
+                            type="text" 
+                            placeholder="Last Name" 
+                            value={this.state.last_name}
+                            onChange={this.inputChangeHandlerLname} />
                         </Col>
                     </Form.Group>
                     <hr/>
@@ -119,14 +183,23 @@ class BaseLineVisit extends Component{
                     <hr/>
                     <Form.Group as={Row} controlId="formHorizontalDate">
                         <Form.Label column sm={4}>Date of Birth <FontAwesomeIcon icon="calendar-alt"/></Form.Label>
-                        <Col sm={2}>
-                        <Form.Control as="input" type="text" placeholder="" />
+                        <Col sm={4}>
+                        <Form.Control 
+                            as="input" 
+                            type="date" 
+                            placeholder="Date of Birth"
+                            value={this.state.date_of_birth}
+                            onChange={this.inputChangeHandlerDob} />
                         </Col>
                     </Form.Group>
                     <Form.Group as={Row} controlId="formHorizontaGender">
                         <Form.Label column sm={4}>Gender</Form.Label>
                         <Col sm={4}>
-                        <Form.Control  as="select">
+                        <Form.Control  
+                            as="select"
+                            type="text"
+                            value={this.state.gender.option}
+                            onChange={this.inputChangeHandlerGender} >
                             <option></option>
                             <option>Male</option>
                             <option>Female</option>
@@ -137,29 +210,32 @@ class BaseLineVisit extends Component{
                     <Form.Group as={Row} controlId="formHorizontalWeight">
                         <Form.Label column sm={4}>Weight</Form.Label>
                         <Col sm={4}>
-                        <Form.Control type="text" placeholder="kg" />
+                        <Form.Control
+                             type="text"
+                             placeholder="kg"
+                             value={this.state.p_weight}
+                             onChange={this.inputChangeHandlerPWeight} />
                         </Col>
                     </Form.Group>
                     <Form.Group as={Row} controlId="formHorizontalHeight">
                         <Form.Label column sm={4}>Height</Form.Label>
                         <Col sm={4}>
-                        <Form.Control type="text" placeholder="cm" />
+                        <Form.Control 
+                            type="text" 
+                            placeholder="cm"
+                            value={this.state.p_height}
+                            onChange={this.inputChangeHandlerPHeight} />
                         </Col>
                     </Form.Group>
-                    <Form.Group as={Row} controlId="formHorizontalEthinicity">
-                        <Form.Label column sm={4}>Ethinicity</Form.Label>
-                        <Col sm={4}>
-                        <Form.Control type="text" placeholder="" />
-                        </Col>
-                    </Form.Group>
-                
                     <hr/>
                     <div><h5>Confounding factor</h5></div>
                     <hr/>
                     <Form.Group as={Row} controlId="formHorizontaHair">
                         <Form.Label column sm={4}>Hair Color</Form.Label>
                         <Col sm={4}>
-                        <Form.Control  as="select">
+                        <Form.Control  
+                            as="select"
+                             >
                             <option></option>
                             <option>Black</option>
                             <option>Blonde</option>
@@ -173,7 +249,9 @@ class BaseLineVisit extends Component{
                     <Form.Group as={Row} controlId="formHorizontaHand">
                         <Form.Label column sm={4}>Dominant Hand</Form.Label>
                         <Col sm={4}>
-                        <Form.Control  as="select">
+                        <Form.Control  
+                            as="select"
+                             >
                             <option></option>
                             <option>Left</option>
                             <option>Right</option>
