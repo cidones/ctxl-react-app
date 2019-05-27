@@ -7,8 +7,9 @@
 .div-form-create{
     margin-top: 1%;
     padding: 20px;
-    background-color: rgba(249, 248, 244, 1);
+    background-color: #f9fcfc;
     border-radius: 20px;
+    box-shadow: 0 0 5px #888;
 }
 
 .button-sub{

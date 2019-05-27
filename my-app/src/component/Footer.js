@@ -12,9 +12,8 @@ class Footer extends Component{
         return(
             <div className='footer'>
                 <div className="text-footer">
-                 <p className="para-text"><b>Copyright</b></p> 
-                 <FontAwesomeIcon icon="copyright" />
-                  <p className="para-text"><b>CTxL PTY ltd</b></p>
+                    <FontAwesomeIcon icon="copyright" />
+                    <p className="para-text"><b>CTxL co.</b></p> 
                 </div>
             </div>
         )

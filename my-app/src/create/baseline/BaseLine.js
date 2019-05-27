@@ -139,7 +139,7 @@ class BaseLineVisit extends Component{
             <hr/>
             <div>Event Name: Baseline Visit</div>
             <hr/>
-                <Form>
+                <Form className="form" onSubmit={this.submitHandler}>
                     <Form.Group as={Row} controlId="formHorizontalId">
                         <Form.Label column sm={4}>Participant ID: </Form.Label>
                         <Col sm={2}>
@@ -305,8 +305,8 @@ class BaseLineVisit extends Component{
                         <Form.Label column sm={4}></Form.Label>
                         <Col sm={4}>
                             <Button 
-                                onClick={this.submitHandler} 
-                                type="button"
+                                
+                                type="submit"
                                 className="buttonSave"
                                 variant="light" 
                             >

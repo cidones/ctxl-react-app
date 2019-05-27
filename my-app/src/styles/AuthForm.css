@@ -1,23 +1,38 @@
-.banner{
-
-    margin-bottom: 5%;
+.banner-login{
+    margin-top: 5%;
+    height: 10em;
+    position: relative;
+}
+h3{
+    text-align: center;
+    padding: 16px;
+    color: #75797c;
 }
 
-
-.form-group-div{
-    max-width: 35%;
+.page-logo{
+    text-align: center;
     margin: auto;
 }
 
+.form-group-div{
+    max-width: 35%;
+    margin: 50px auto 10px auto;
+}
+
 .button-div{
-
-    max-width: 200px;
-    margin: 0 auto 120px auto;
-
+    
+    text-align: center;
+    margin: auto;
+    
 }
 
 .error-div{
     max-width: 30%;
     margin: auto;
     padding: 20px;
+}
+.signup-text{
+    text-align: center;
+    padding: 16px;
+
 }

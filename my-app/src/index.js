@@ -7,7 +7,7 @@ import Root from './component/Root';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import { Router, Switch, Route, Redirect } from 'react-router-dom';
-import { fetchAuthenticated } from './actions/account';
+import { fetchAuthenticated, signup } from './actions/account';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers';
 import CreatePage from './create/CreatePage';
@@ -17,6 +17,7 @@ import ThermalData from './create/thermal/ThermalData';
 import ManagePage from './manage/ManagePage';
 import Home from './component/Home';
 import NotFoundComponent from './component/NotfoundComponent';
+import SignUp from './component/Signup';
 
 
 
@@ -46,6 +47,7 @@ store.dispatch(fetchAuthenticated())
               <Switch>
                 <Route exact path='/' component={Root}/>
                 <AuthRoute  path='/home' component={Home}/>
+                <AuthRoute  path='/signup' component={SignUp}/>
                 <AuthRoute  path='/create' component={CreatePage}/>
                 <AuthRoute  path='/baseline/add' component={AddEdit}/>
                 <AuthRoute  path='/baseline' component={BaseLineVisit} />

@@ -1,49 +1,41 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Button, FormGroup, FormControl, Alert } from 'react-bootstrap';
 import { signup, login } from '../actions/account';
 import fetchStates from '../reducers/fetchStates';
 import logo from '../assets/logo.png';
 import '../styles/AuthForm.css';
-import history from '../router/history';
 
+import { Button, FormGroup, FormControl, Alert } from 'react-bootstrap';
 
-
-class AuthForm extends Component {
-  state = { username: '', password: '', buttonClicked: false };
-
-  updateUsername = event => {
-    this.setState({ username: event.target.value });
-  }
-
-  updatePassword = event => {
-    this.setState({ password: event.target.value });
-  }
-
-  login = () => {
-    this.setState({ buttonClicked: true });
-
-    const { username, password } = this.state;
-
-    this.props.login({ username, password });
-
+class SignUp extends Component{
+    state = { username: '', password: '', buttonClicked: false };
+    updateUsername = event => {
+        this.setState({ username: event.target.value });
+      }
     
-  }
-
-  get Error() {
-    if (
-      this.state.buttonClicked && 
-      this.props.account.status === fetchStates.error
-      ) {
-      return <div>
-                <Alert variant="danger">{this.props.account.message}</Alert>
-              </div>
-    }
-  }
-
-  render() {
-    return (
-      <div>
+      updatePassword = event => {
+        this.setState({ password: event.target.value });
+      }
+      signup = () => {
+        this.setState({ buttonClicked: true });
+    
+        const { username, password } = this.state;
+    
+        this.props.signup({ username, password });
+      }
+      get Error() {
+        if (
+          this.state.buttonClicked && 
+          this.props.account.status === fetchStates.error
+          ) {
+          return <div>
+                    <Alert variant="danger">{this.props.account.message}</Alert>
+                  </div>
+        }
+      }
+    render(){
+        return(
+            <div>
         <div className="banner-login">
           <img src={logo} className="page-logo" alt="logo" />
           <br/>
@@ -69,23 +61,15 @@ class AuthForm extends Component {
         </div>
         <div className="button-div">
           <Button  size='lg'
-                   onClick={this.login}
-                   active>Login
+                   onClick={this.signup}
+                   active>Sign Up
           </Button>
-        </div>
-        <div className="signup-text">
-          <a href="/signup" onClick={() => history.push('/signup')}>Don't have an account? click for Sign up</a>
         </div>
         <br />
         <div className="error-div">{this.Error}</div>
       
       </div>
-      
-    );
-  }
+        )
+    }
 }
-
-export default connect(
-  ({ account }) => ({ account }),
-  { signup, login }
-)(AuthForm);
+export default SignUp;

@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Table from 'react-bootstrap/Table';
 import './ManagePage.css';
 import HeaderComponent from '../component/HeaderComponent';
+import Footer from '../component/Footer'
 
 library.add(faEdit, faCheckSquare, faStopCircle)
 
@@ -44,10 +45,10 @@ class ManagePage extends Component{
                               </div>
     return(
         <div className="managePageStyle">
-            <HeaderComponent/>
-            <input onChange={this.changeIcon}/>
+          <HeaderComponent/>
+           <input onChange={this.changeIcon}/>
             <div className="manage-text-div">    
-                {manageContent}
+                <p>{manageContent}</p>
             </div>
             <div className="table-div">
                 <Table responsive bordered hover  size="sm">
@@ -71,6 +72,7 @@ class ManagePage extends Component{
                     </tbody>
                 </Table>
             </div>
+            <Footer/>
         </div>
         )
     }

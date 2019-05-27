@@ -14,32 +14,24 @@ class HomeContent extends Component {
     render(){
         return(
             <div className="fullwidth">
-            <div className="banner">
-                <img src={logo} className="page-logo" alt="logo" />
-            </div>
-            <Container className="container-wrapper" >
-                <Row>
-                    <Col sm={8}>
+                <div className="banner">
+                    <img src={logo} className="page-logo" alt="logo" />
+                </div>
+                <Container className="container-wrapper" >
                     <div className="main-text-wrapper">
-                        <h4 className="h4-home">Welcome to CTxL Case Report Form</h4>
-                        <p>
-                            {homeContent}
-                        </p>   
+                        <h4>Welcome to CTxL Case Report Form</h4>
+                        <p>{homeContent}</p>   
                     </div>
-                    </Col>
-                    <Col sm={4}>
-                        <div className="features-text-div">
-                            <div>
-                                <h4>CTxL features</h4>
-                                <p><b>Build online surveys and databases quickly and securely</b> - Create and design your project rapidly using secure web authentication from your browser. No extra software is required.</p>
-                                <p><b>Fast and flexible</b> - Conception to production-level survey/database in less than one day.</p>
-                                <p><b>Export data to common data analysis packages</b> - Export your data to Microsoft Excel, PDF, SAS, Stata, R, or SPSS for analysis.</p>
-                            </div>
+                    <div className="features-text-div">
+                        <div>
+                            <h4>CTxL features</h4>
+                            <p><b>Build online surveys and databases quickly and securely</b> - Create and design your project rapidly using secure web authentication from your browser. No extra software is required.</p>
+                            <p><b>Fast and flexible</b> - Conception to production-level survey/database in less than one day.</p>
+                            <p><b>Export data to common data analysis packages</b> - Export your data to Microsoft Excel, PDF, SAS, Stata, R, or SPSS for analysis.</p>
                         </div>
-                    </Col> 
-                </Row>
-            </Container>
-        </div>
+                    </div> 
+                </Container>
+            </div>
         )
     }
 }
